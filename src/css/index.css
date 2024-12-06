@@ -1,0 +1,158 @@
+/* Estilos generales */
+body {
+    font-family: montserrat, sans-serif;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    background-image: url('../image/Background.jpg'); /* Mantiene el fondo actual */
+}
+
+
+.logo1 {
+    width: 300px; /* Aumenta el tamaño del logo */
+    height: auto; /* Mantiene la proporción original de la imagen */
+    margin-bottom: 10px; /* Ajusta el margen inferior */
+    display: block; /* Asegura que sea un bloque independiente */
+    margin-left: auto; /* Centra horizontalmente */
+    margin-right: auto;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../image/Background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+
+.login-container {
+    width: 350px; /* Tamaño más pequeño */
+    padding: 20px; /* Espaciado interno */
+    background-color: #ffffff; /* Fondo del contenedor */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombras para el efecto de relieve */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto; /* Centrado dentro del contenedor padre */
+}
+
+.login-container .input-group {
+    width: 80%;
+    max-width: 400px;
+}
+
+.input-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+
+.password-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.password-container input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+
+/* Asegura que el checkbox y el texto estén en una misma línea */
+
+
+/* Espacio entre el checkbox y el texto */
+/* Ajusta el espacio entre el checkbox y el texto y mueve el checkbox hacia abajo */
+.show-password input[type="checkbox"] {
+    margin-right: -5px; /* Ajusta el espacio entre el checkbox y el texto (más cerca del texto) */
+    width: 20px; /* Establece un tamaño adecuado para el checkbox */
+    margin-top: 5px; /* Mueve el checkbox más abajo, puedes ajustar este valor según el espacio deseado */
+}
+
+
+/* Ajuste para el tamaño del checkbox si es necesario */
+.show-password input[type="checkbox"] {
+    transform: scale(1.2); /* Aumenta el tamaño del checkbox */
+}
+
+
+
+.password-container i {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 20px;
+    color: #999;
+}
+
+.password-container i:hover {
+    color: #14432F;
+}
+
+/* Estilos para el botón */
+.button {
+    width: 100%;
+    max-width: 400px; /* Esto asegura que el botón no se expanda demasiado */
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #050505;
+    color: white;
+    border: none;
+    border-radius: 100px;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 10px; /* Añade algo de espacio arriba del botón */
+}
+
+.button:hover {
+    background-color: #0b291c;
+}
+
+.enlaces {
+    display: inline-block;
+    margin: 10px;
+    font-weight: bold; /* Esto hace que el texto esté en negrita */
+    font-size: 14px;
+    text-decoration: none;
+    color: #2f53b7;
+}
+
+.enlaces:hover {
+    text-decoration: underline;
+}
+
+.error-message {
+    color: red;
+    margin-bottom: 15px;
+    font-size: 14px;
+    text-align: center;
+}
+
+
+/* Estilo responsivo para pantallas pequeñas */
+@media (max-width: 768px) {
+    .login-container {
+        width: 90%; /* Aumenta el ancho en pantallas más pequeñas */
+    }
+}

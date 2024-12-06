@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login - Ecoplan</title>
+        <link rel="stylesheet" href="src/css/estilos.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+        <link rel="shortcut icon" href="src/image/LOGO PLAYME-02.png" type="image/x-icon">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+        <link rel="stylesheet" href="src/css/index.css">
+    </head>
+<body>
+    <div class="logo-container"></div> <!-- Contenedor para la imagen predominante -->
+
+    <div class="login-container">
+        <img class="logo1" src="src/image/LOGO PLAYME-02.png" alt="Logo">
+        <h2>Recuperar Contraseña</h2>
+        
+        <div class="input-group">
+
+            <label for="email">Correo Eléctronico</label>
+            <input type="email" id="email" name="email" placeholder="Ingrese su Correo Eletronico" required>
+            
+            <button type="button" class="button" onclick="recuperar()">Enviar</button>
+        </div>
+
+        <div>
+            <a class="enlaces" href="/login.html">Inicio Sesión</a>
+        </div>
+    </div>
+
+    <script src="src/js/recuperarContrasena.js"></script>
+    <script src="src/js/globalComponet.js"></script>
+
+</body>
+</html>

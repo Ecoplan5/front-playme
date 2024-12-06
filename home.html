@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - playme</title>
+<link rel="stylesheet" href="src/image/LOGO PLAYME-02.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="src/image/LOGO PLAYME-02.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="src/css/home.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- Enlace que lleva al carrusel -->
+    <a class="navbar-brand" href="#home-carousel">
+      <img src="src/image/LOGO PLAYME-02.png" alt="Logo Playme" style="height: 60px; margin-right: 10px;">
+  
+      
+    </a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="showStores()">Tiendas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="toggleCart()">Carrito 🛒 
+            <span id="cart-count" style="background-color: rgb(3, 3, 3); color: white; padding: 0px 4px; border-radius: 50%; font-size: 11px; position: relative; top: -5px; left: -5px;">0</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="avatar-container" onclick="toggleDropdown()" style="cursor: pointer;">
+      <div class="circle" id="avatar-initials" style="width: 40px; height: 40px; border-radius: 50%; background-color: #007bff; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 16px;">
+        <!-- Las iniciales aparecerán aquí dinámicamente -->
+      </div>
+      <div class="username" id="usuario" style="margin-left: 10px;"></div>
+    </div>
+    
+    
+    <ul class="dropdown-menu" id="dropdownMenu" style="display: none;">
+      <li class="pointer" onclick="updateContactInfo()"><i class="fas fa-user-edit"></i> Actualizar Perfil</li>
+      <li class="pointer" onclick="uploadImage()"><i class="fas fa-upload"></i> Cargar imagen</li>
+      <li class="pointer logout" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</li>
+    </ul>
+  </nav>
+
+  
+  <!-- Carrusel (con clase .carousel-container para controlar el z-index) -->
+  <div class="carousel-container">
+    <!-- Tu código de carrusel aquí -->
+  </div>
+  
+  <!-- Contenedor de Tiendas -->
+  <div id="stores-container" class="container mt-5" style="display: none;">
+      <h2>Selecciona una Tienda</h2>
+      <div id="store-list" class="store-list"></div>
+  
+      <h2>Selecciona un Producto</h2>
+      <div id="product-list" class="product-list"></div>
+  
+      <h2>Personaliza tu Producto</h2>
+      <div class="customizer">
+          <label for="color">Selecciona un color:</label>
+          <input type="color" id="color" value="#ff0000">
+          <br><br>
+          <label for="custom-text">Escribe un texto:</label>
+          <input type="text" id="custom-text" placeholder="Texto personalizado">
+          <br><br>
+          <label for="upload-image">Sube una imagen:</label>
+          <input type="file" id="upload-image" accept="image/*">
+          <br><br>
+          <button id="customize-button" class="btn btn-primary">Personalizar</button>
+      </div>
+  
+      <div id="customized-item" class="customized-item">
+          <h3>Vista Previa del Producto Personalizado</h3>
+          <div id="customized-preview" style="width: 200px; height: 200px; background-color: #ff0000; position: relative;">
+              <img id="customized-image" src="" style="max-width: 100%; max-height: 100%; position: absolute; top: 0; left: 0;">
+          </div>
+          <p id="customized-text">Texto aquí</p>
+      </div>
+  </div>
+  
+
+<!-- Carrusel en la página principal -->
+<div id="home-carousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://via.placeholder.com/800x400?text=Imagen+1" class="d-block w-100" alt="Imagen 1">
+    </div>
+    <div class="carousel-item">
+      <img src="https://via.placeholder.com/800x400?text=Imagen+2" class="d-block w-100" alt="Imagen 2">
+    </div>
+    <div class="carousel-item">
+      <img src="https://via.placeholder.com/800x400?text=Imagen+3" class="d-block w-100" alt="Imagen 3">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#home-carousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Anterior</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#home-carousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Siguiente</span>
+  </button>
+</div>
+<!-- Contenedor de Tiendas y Productos -->
+
+
+<!-- Carrito de Compras (inicialmente oculto) -->
+<div id="cart" style="position: fixed; top: 50px; right: -250px; width: 250px; padding: 10px; border: 1px solid #000000; background-color: #000000; transition: right 0.3s;">
+    <h4>Tu Carrito</h4>
+    <div id="cart-preview"></div>
+    <button class="btn btn-danger" onclick="clearCart()">Vaciar Carrito</button>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+<script src="src/js/home.js"></script>
+</html>
